@@ -4,12 +4,9 @@
 
 <div class="body">
 
-
   <div class="main-card">
 
     <input class="live-time-input" type="checkbox" [checked]="useLiveTime" (change)="setLiveTime()"> Use live time
-    <br/>
-    <br/>
 
     <div class="row">
       <clock-component [time]="timeNow" (timeChange)="updateSharedTime($event)" [disableInputs]="useLiveTime"></clock-component>

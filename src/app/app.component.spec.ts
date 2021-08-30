@@ -1,31 +1,30 @@
 import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { ClockComponent } from './Clock/clock.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ClockComponent
       ],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('should create the app', (() => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
+  }));
 
-  it(`should have as title 'synchronized-clock'`, () => {
+  it('checkbox should toggle useLiveTime', (() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('synchronized-clock');
-  });
+    const appEle = fixture.nativeElement as HTMLElement;
+    appEle.getElementsByClassName("live-time-input")[0].dispatchEvent(new MouseEvent("click"))
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('synchronized-clock app is running!');
-  });
+    expect(app.useLiveTime).toBeTruthy();
+  }));
 });

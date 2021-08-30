@@ -1,0 +1,16 @@
+<div class="clock-component">
+  <div class="clock">
+    <div class="hand hour-hand" [style.transform]="'rotate('+hourDegrees+'deg)'">
+    </div>
+    <div class="hand minute-hand" [style.transform]="'rotate('+minsDegrees+'deg)'">
+    </div>
+    <div class="hand second-hand" [style.transform]="'rotate('+secondsDegrees+'deg)'">
+    </div>
+  </div>
+
+  <div class="time-form">
+    <input [disabled]="disableInputs" type="number" [value]="this.hourNow" (change)="updateHour($event)">:
+    <input [disabled]="disableInputs" type="number" [value]="this.minNow" (change)="updateMin($event)">:
+    <input [disabled]="disableInputs" type="number" [value]="this.secNow" (change)="updateSec($event)">
+  </div>
+</div>

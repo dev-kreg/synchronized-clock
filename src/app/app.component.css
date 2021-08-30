@@ -1,0 +1,29 @@
+.toolbar {
+	height: 80px;
+	display: flex;
+	align-items: center;
+	background-color: #5697d8;
+	color: white;
+	font-weight: 600;
+}
+
+.toolbar img {
+	margin: 0 32px;
+}
+
+.body {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.main-card {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
+    background-color: whitesmoke;
+	width: 100%;
+}
+.row {
+	display: flex;
+	justify-content: space-around;
+}
